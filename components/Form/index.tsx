@@ -77,7 +77,7 @@ const Form: FC<FormProps> = ({ step, setStep }) => {
     setProductLaunch('Pre Product')
     setEmail('')
     setStep(0)
-    router.push('')
+    router.push('/')
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {

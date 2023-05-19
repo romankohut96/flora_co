@@ -84,7 +84,7 @@ const Form: FC<FormProps> = ({ step, setStep }) => {
     e.preventDefault()
     const payload = {
       projectName,
-      projectURL,
+      projectURL: `Alphaguilty.io/${projectURL}`,
       categories,
       goal,
       launch: productLaunch,

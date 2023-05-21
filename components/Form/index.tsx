@@ -68,7 +68,20 @@ const Form: FC<FormProps> = ({ step, setStep }) => {
     isValid && setStep(value)
   }
 
+  const handleSetCategory = (value: string) => {
+    const isCategoryAdded = categories.includes(value)
+    if (isCategoryAdded) {
+      const filterdCategories = categories.filter(
+        (category) => category !== value,
+      )
+      setCategories(filterdCategories)
+    } else {
+      setCategories((prev) => [...prev, value])
+    }
+  }
+
   const reset = () => {
+    router.push('/projects')
     setProjectName('')
     setProjectURL('')
     setCategories([])
@@ -77,7 +90,6 @@ const Form: FC<FormProps> = ({ step, setStep }) => {
     setProductLaunch('Pre Product')
     setEmail('')
     setStep(0)
-    router.push('/projects')
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -114,7 +126,7 @@ const Form: FC<FormProps> = ({ step, setStep }) => {
             projectURL={projectURL}
             setProjectURL={setProjectURL}
             categories={categories}
-            setCategories={setCategories}
+            handleSetCategory={handleSetCategory}
             setStep={handleStep}
             onReset={reset}
           />

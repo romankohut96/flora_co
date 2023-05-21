@@ -9,13 +9,13 @@ const ProjectsList = () => {
   if (!projects.length) {
     return (
       <h1 className='w-full absolute top-1/2 text-center p-5 text-lg'>
-        Create your first project{' '}
         <Link
           href={'/create_project'}
           className={'text-primary underline underline-offset-4'}
         >
           Create
-        </Link>
+        </Link>{' '}
+        your first project
       </h1>
     )
   }

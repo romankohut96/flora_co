@@ -7,7 +7,7 @@ interface StartProjectStepProps {
   projectURL: string
   setProjectURL: (value: string) => void
   categories: string[]
-  setCategories: (value: string[]) => void
+  handleSetCategory: (value: string) => void
   setStep: (value: number) => void
   onReset: () => void
 }
@@ -30,7 +30,7 @@ const StartProjectStep: FC<StartProjectStepProps> = ({
   projectURL,
   setProjectURL,
   categories,
-  setCategories,
+  handleSetCategory,
   setStep,
   onReset,
 }) => {
@@ -70,7 +70,7 @@ const StartProjectStep: FC<StartProjectStepProps> = ({
                 ? 'text-primary bg-primary-100'
                 : 'bg-secondary'
             } w-fit px-3 py-1.5 rounded-2xl cursor-pointer`}
-            onClick={() => setCategories([...categories, item])}
+            onClick={() => handleSetCategory(item)}
           >
             {item}
           </span>
